@@ -1,0 +1,33 @@
+.labels{
+
+	font-size: 30px;
+	color: red;
+	margin-left: 15px;
+}
+.inputs{
+
+	font-size: 30px;
+	margin-left: 20px;
+	background-color: gray;
+	color: blue;
+}
+.background{
+
+	background-color: black;	
+}
+
+.botones{
+	font-size: 30px;
+	margin-left: 20px;
+	background-color: gray;
+	color: #ffff00;
+
+
+}
+
+.select {
+	font-size: 30px;
+	margin-left: 20px;
+	background-color: gray;
+	color:#ffffff;
+}

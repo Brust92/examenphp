@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf-8">
+<link rel="stylesheet" type="text/css" href="estilos.css">
+
+</head>
+<body class="background">
+
+	<button onclick="window.location.href='Borrar.html'" class="botones">Agregar Libro</button>
+	<button onclick="window.location.href='Borrar.html'" class="botones">Borrar Libro</button>
+	<button onclick="window.location.href='Borrar.html'" class="botones">Agregar Autor</button>
+	<button onclick="window.location.href='Borrar.html'" class="botones">Agregar Autor</button>
+
+<div>
+	<form metod="POST" name="AgregarLibro" action="service.php">
+		<input type="hidden" name="action" value="AgregarLibro" />
+
+		<center>
+
+		<p>
+		<label class= "labels">Titulo:</label>
+		<input type="text" name="titulo" class="inputs">
+		</p>
+
+		<br>
+
+		<p>
+		<label class= "labels">Autor:</label>
+		<input type="text" name="idautor" class="inputs">
+		</p>
+
+		<br>
+
+		<p>
+		<label class= "labels">Precio:</label>
+		<input type="text" name="precio" class="inputs">
+		</p>
+
+		<br>
+
+		<p>
+		<label class= "labels">Edicion:</label>
+		<input type="text" name="edicion" class="inputs">
+		</p>
+
+		<br>
+
+		<p>
+		<label class= "labels">Editorial:</label>
+		<input type="text" name="ideditorial" class="inputs">
+		</p>
+		
+		
+
+
+	
+
+		<button type="summit" name = "action" value="AgregarLibro" class="botones">Agregar</button>
+		<button type="reset" class="botones">Borrar</button>
+
+	</form>
+
+
+	
+	
+
+	
+
+</div>
+
+</body>
+</html>
