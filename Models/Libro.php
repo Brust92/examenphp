@@ -6,7 +6,7 @@ class Libro {
 
 	public function __construct(){
 
-		require_once 'Connect.php';
+		require_once('Connect.php');
 		
 		$this->connect=new Connect();
 		$this->db = $this->connect->get_connection();
@@ -14,12 +14,18 @@ class Libro {
 
 
 	public function getAll(){
-		$query= this->db->query("select * from libro");
-		while($row = $query->fetch_object()){
+		$resultSet = [];
+		$Query = $this->db->prepare('select * from libro where idlibro = 3');
+		$Query->execute();
 
-			$resultSet[] = $row;
-
+		foreach($Query->fetch_object() as $row){
+			$resultSet[] =$row; 
 		}
+
+		 //$resultSet = $Query->fetch();
+
+			//$resultSet[] = new Post($post[0],$post[1],$post[2]);
+			//echo $resultSet;
 
 		return $resultSet;
 
@@ -27,6 +33,10 @@ class Libro {
 	}
 
 
+
+
 }
+$libro= new libro();
+$libro->getAll();
 
 ?>
