@@ -16,7 +16,7 @@
 
 
 <div>
-	<form method="POST" name="EliminarLibro" action="service.php">
+	<form method="POST" name="EliminarLibro" action="Services/Service2.php">
 		<input type="hidden" name="action" value="EliminarLibro" />
 
 		<center>
@@ -25,11 +25,10 @@
 			<select class = "select" name="idlibro">
 				<?php
 
-				$db = mysqli_connect("localhost:3306","luisfer","root","examen" );
+				require_once('Models/Libro.php');
 
-				$sql = "select * from libro";
-
-				$res = $db->query($sql);
+				$libro = new Libro();
+				$res = $libro->getAll();
 				while ($rows = mysqli_fetch_row($res)){
 
 					echo '<option value="'. $rows[0] .'">' . $rows[1] .'</option>';
@@ -60,10 +59,30 @@
 			<th>Editorial</th>
 
 		</tr>
+
+
 		<?php
 
+			//require_once('Models/Libro.php');
 
-				$db = mysqli_connect("localhost:3306","luisfer","root","examen" );
+			$libro = new Libro();
+			$res = $libro->getAllforTable();
+
+			while ($rows = mysqli_fetch_row($res)){
+
+					echo '<tr class="tabla">  
+								<th class="tablechars">' . $rows[1] .'</th>
+								<th class="tablechars">' . $rows[2] .'</th>
+								<th class="tablechars">' . $rows[3] .'</th>
+								<th class="tablechars">' . $rows[4] .'</th>
+								<th class="tablechars">' . $rows[5] .'</th>
+								</tr>';
+				}
+
+		?>
+		<!--<?php
+
+				/*$db = mysqli_connect("localhost:3306","luisfer","root","examen" );
 
 				$sql = "select  L.idlibro,
 								L.titulo,
@@ -85,9 +104,9 @@
 								<th class="tablechars">' . $rows[4] .'</th>
 								<th class="tablechars">' . $rows[5] .'</th>
 								</tr>';
-				}
+				}*/
 
-				 ?>
+				 ?>-->
 
 	</table>
 	</center>

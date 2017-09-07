@@ -16,7 +16,7 @@
 
 
 <div>
-	<form method="POST" name="AgregarLibro" action="service.php">
+	<form method="POST" name="AgregarLibro" action="Services/Service2.php">
 		<input type="hidden" name="action" value="AgregarLibro" />
 
 		<center>
@@ -26,16 +26,13 @@
 			<input type="text" name="titulo" class="inputs">
 		</p>
 
-		<br>
 
-<!--
-		<p>
+
+		<!--<p>
 			<label class= "labels">Autor:</label>
 			<input type="text" name="idautor" class="inputs">
-		</p>
+		</p>-->
 
-		<br>
--->
 
 		
 		<br>
