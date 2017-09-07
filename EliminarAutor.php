@@ -25,15 +25,12 @@
 			<select class = "select" name="idAutor">
 				<?php
 
-				$db = mysqli_connect("localhost:3306","luisfer","root","examen" );
+				require_once('Models/Autor.php');
 
-				$sql = "select autor.idautor, autor.nombreAutor,
-						(select count(*)
-						from libro where libro.idautor = autor.idautor
-						) as cuentas
-						from autor";
+				$autor = new Autor();
 
-				$res = $db->query($sql);
+				$res = $autor->getActorForDelete();
+
 				while ($rows = mysqli_fetch_row($res)){
 					if ($rows[2] == 0) 
 					{					
@@ -67,15 +64,12 @@
 		<?php
 
 
-				$db = mysqli_connect("localhost:3306","luisfer","root","examen" );
+				require_once('Models/Autor.php');
 
-				$sql = "select autor.idautor, autor.nombreAutor,
-						(select count(*)
-						from libro where libro.idautor = autor.idautor
-						) as cuentas
-						from autor";
+				$autor = new Autor();
 
-				$res = $db->query($sql);
+				$res = $autor->getActorForDelete();
+				
 				while ($rows = mysqli_fetch_row($res)){
 
 					echo '<tr class="tabla">  

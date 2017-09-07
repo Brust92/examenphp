@@ -1,7 +1,7 @@
 
 <?php
 
-class Autor {
+class Editorial {
 
 	private $id = 0;
 	private $nombre = '';
@@ -44,24 +44,13 @@ class Autor {
 	
 
 
-	public function getActorForDelete(){
+	public function getAll()
+	{
 
 
 		$resultSet = [];
 		$conn = new mysqli('localhost', 'luisfer', 'root', 'examen');
-		$result = $this->db->query('call selectActorForDelete()');
-
-		return $result;
-
-
-	}
-
-	public function getAll(){
-
-
-		$resultSet = [];
-		$conn = new mysqli('localhost', 'luisfer', 'root', 'examen');
-		$result = $this->db->query('select * from autor');
+		$result = $this->db->query('select * from Editorial');
 
 		while($row = mysqli_fetch_row($result)){
 			$resultSet[] =$row; 
@@ -72,19 +61,44 @@ class Autor {
 
 	}
 
-	public function guardarAutor(){
+	public function guardarEditorial()
+	{
 
 		$conn = new mysqli('localhost', 'luisfer', 'root', 'examen');
 
-		$query = 'insert into autor (nombreAutor) 
-			values('.$this->nombre.')';
+		$query = "insert into editorial (nombreEditorial) 
+			values('".$this->nombre."')";
 
 		if (mysqli_query($conn, $query)) 
 		{
         mysqli_close($conn);
         ?>
         <script>
-            window.location.href = "../AgregarAutor.html";
+            window.location.href = "../AgregarEditorial.html";
+            alert('Registo Exitosamente');
+        </script>
+        <?php
+
+    	}
+     else 
+     {
+     	echo '<label>'.$query.' </label>';
+     }
+
+	}
+
+	public function BorrarEditorial(){
+
+		$conn = new mysqli('localhost', 'luisfer', 'root', 'examen');
+
+		$query = "call borrarEditorial(".$this->id")";
+
+		if (mysqli_query($conn, $query)) 
+		{
+        mysqli_close($conn);
+        ?>
+        <script>
+            window.location.href = "../EliminarEditorial.php";
             alert('Autor Borrado Exitosamente');
         </script>
         <?php
@@ -94,50 +108,14 @@ class Autor {
      {
      	        ?>
         <script>
-            window.location.href = "../AgregarAutor.html";
+            window.location.href = "../EliminarEditorial.php";
             alert('Error al Borrar');
         </script>
         <?php
      }
 
 	}
-
-
-
-	public function BorrarAutor(){
-
-		$conn = new mysqli('localhost', 'luisfer', 'root', 'examen');
-
-		$query = "call BorrarAutor(".$this->id.")";
-
-		if (mysqli_query($conn, $query)) 
-		{
-        mysqli_close($conn);
-        ?>
-        <script>
-            window.location.href = "../EliminarAutor.php";
-            alert('Autor Borrado Exitosamente');
-        </script>
-        <?php
-
-    	}
-     else 
-     {
-     	        ?>
-        <script>
-            window.location.href = "../EliminarAutor.php";
-            alert('Error al Borrar');
-        </script>
-        <?php
-     }
-
-	}
-
-
-
-
 }
-//$libro= new libro();
-//$libro->getAll();
+
 
 ?>

@@ -29,15 +29,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && $Type == 'AgregarLibro'){
 else if($_SERVER['REQUEST_METHOD'] == 'POST' && $Type == 'AgregarAutor'){
 
 
-    require_once('../Models/Libro.php');
-    $libro = new libro();
-     ?>
-
-     <script>
-            window.location.href = "../agregarLibro.php";
-            alert('Registrado Exitosamente');
-    </script>
-     <?php
+    require_once('../Models/Autor.php');
+    $autor = new Autor();
+    $autor->SetNombre($_POST["nombreAutor"]);
+    $autor->guardarAutor();
 
 
 }
@@ -51,13 +46,45 @@ else if($_SERVER['REQUEST_METHOD'] == 'POST' && $Type == 'EliminarLibro'){
     $libro->SetId($_POST["idlibro"]);
 
      $libro->borrarLibro();
-     ?>
 
-     <script>
-            window.location.href = "../agregarLibro.php";
-            alert('Registrado Exitosamente');
-    </script>
-     <?php
+
+}
+
+////////////////BORRAR AUTOR////////////////
+
+else if($_SERVER['REQUEST_METHOD'] == 'POST' && $Type == 'EliminarAutor'){
+
+
+    require_once('../Models/Autor.php');
+    $autor = new Autor();
+    $autor->SetId($_POST["idAutor"]);
+    $autor->BorrarAutor();
+
+
+}
+
+/////////////////AGREGAR EDITORIAL///////////////////
+
+else if($_SERVER['REQUEST_METHOD'] == 'POST' && $Type == 'AgregarEditorial'){
+
+
+    require_once('../Models/Editorial.php');
+    $editorial = new Editorial();
+    $editorial->SetNombre($_POST["nombreEditorial"]);
+    $editorial->guardarEditorial();
+
+
+}
+
+////////////////BORRAR AUTOR////////////////
+
+else if($_SERVER['REQUEST_METHOD'] == 'POST' && $Type == 'EliminarEditorial'){
+
+
+    require_once('../Models/Editorial.php');
+    $editorial = new Editorial();
+    $editorial->SetId($_POST["ideditorial"]);
+    $editorial->BorrarEditorial();
 
 
 }
