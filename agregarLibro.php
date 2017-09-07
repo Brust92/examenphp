@@ -26,18 +26,7 @@
 			<input type="text" name="titulo" class="inputs">
 		</p>
 
-
-
-		<!--<p>
-			<label class= "labels">Autor:</label>
-			<input type="text" name="idautor" class="inputs">
-		</p>-->
-
-
-		
 		<br>
-
-
 
 		<p>
 			<label class= "labels">Precio:</label>
@@ -53,16 +42,7 @@
 
 
 		<br>
-		<!--
 
-		<p>
-			<label class= "labels">Editorial:</label>
-			<input type="text" name="ideditorial" class="inputs">
-		</p>
-		<br>
-
-		<p>
-		-->
 			<label class= "labels">Editorial:</label>
 			<select class = "select" name="ideditorial">
 				<?php
@@ -97,24 +77,13 @@
 				 ?>
 
 			</select>
-		</p>
-
-
-		
+		</p>	
 
 		<button type="summit" name = "action" value="AgregarLibro" class="botonAgregar">Agregar</button>
 		<button type="reset" class="botonBorrar">Borrar</button>
 	</center>
 
-	</form>
-
-
-
-
-	
-	
-
-	
+	</form>	
 
 </div>
 

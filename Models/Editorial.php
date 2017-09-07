@@ -71,8 +71,8 @@ class Editorial {
 
 		if (mysqli_query($conn, $query)) 
 		{
-        mysqli_close($conn);
-        ?>
+       	 mysqli_close($conn);
+       	 ?>
         <script>
             window.location.href = "../AgregarEditorial.html";
             alert('Registo Exitosamente');
@@ -91,17 +91,17 @@ class Editorial {
 
 		$conn = new mysqli('localhost', 'luisfer', 'root', 'examen');
 
-		$query = "call borrarEditorial(".$this->id")";
+		$query = "call borrarEditorial(".$this->id.")";
 
 		if (mysqli_query($conn, $query)) 
 		{
-        mysqli_close($conn);
-        ?>
+       	 mysqli_close($conn);
+       	 ?>
         <script>
             window.location.href = "../EliminarEditorial.php";
-            alert('Autor Borrado Exitosamente');
+            alert('Editorial Borrado Exitosamente');
         </script>
-        <?php
+      	  <?php
 
     	}
      else 

@@ -17,7 +17,7 @@
 
 <div>
 	<br>
-	<form method="POST" name="EliminarEditorial" action="service.php">
+	<form method="POST" name="EliminarEditorial" action="Services/Service2.php">
 		<input type="hidden" name="action" value="EliminarEditorial" />
 
 		<center>

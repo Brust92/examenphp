@@ -16,7 +16,7 @@
 
 
 <div>
-	<form method="POST" name="EliminarAutor" action="service.php">
+	<form method="POST" name="EliminarAutor" action="Services/Service2.php">
 		<input type="hidden" name="action" value="EliminarAutor" />
 
 		<center>

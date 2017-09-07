@@ -63,8 +63,6 @@
 
 		<?php
 
-			//require_once('Models/Libro.php');
-
 			$libro = new Libro();
 			$res = $libro->getAllforTable();
 
@@ -80,33 +78,6 @@
 				}
 
 		?>
-		<!--<?php
-
-				/*$db = mysqli_connect("localhost:3306","luisfer","root","examen" );
-
-				$sql = "select  L.idlibro,
-								L.titulo,
-								L.precio,
-								L.edicion,
-								A.nombreAutor,
-								E.nombreEditorial 
-								from libro L, autor A, editorial E
-								where L.idautor = A.idautor and L.ideditorial = E.ideditorial
-								order by L.titulo ";
-
-				$res = $db->query($sql);
-				while ($rows = mysqli_fetch_row($res)){
-
-					echo '<tr class="tabla">  
-								<th class="tablechars">' . $rows[1] .'</th>
-								<th class="tablechars">' . $rows[2] .'</th>
-								<th class="tablechars">' . $rows[3] .'</th>
-								<th class="tablechars">' . $rows[4] .'</th>
-								<th class="tablechars">' . $rows[5] .'</th>
-								</tr>';
-				}*/
-
-				 ?>-->
 
 	</table>
 	</center>

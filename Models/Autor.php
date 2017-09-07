@@ -76,8 +76,8 @@ class Autor {
 
 		$conn = new mysqli('localhost', 'luisfer', 'root', 'examen');
 
-		$query = 'insert into autor (nombreAutor) 
-			values('.$this->nombre.')';
+		$query = "insert into autor (nombreAutor) 
+			values('".$this->nombre."')";
 
 		if (mysqli_query($conn, $query)) 
 		{
@@ -85,7 +85,7 @@ class Autor {
         ?>
         <script>
             window.location.href = "../AgregarAutor.html";
-            alert('Autor Borrado Exitosamente');
+            alert('Autor Agregado Exitosamente');
         </script>
         <?php
 
@@ -95,7 +95,7 @@ class Autor {
      	        ?>
         <script>
             window.location.href = "../AgregarAutor.html";
-            alert('Error al Borrar');
+            alert('Error al Agregar');
         </script>
         <?php
      }
@@ -112,22 +112,22 @@ class Autor {
 
 		if (mysqli_query($conn, $query)) 
 		{
-        mysqli_close($conn);
-        ?>
-        <script>
-            window.location.href = "../EliminarAutor.php";
-            alert('Autor Borrado Exitosamente');
-        </script>
+       		mysqli_close($conn);
+        	?>
+       		 <script>
+        	    window.location.href = "../EliminarAutor.php";
+       		    alert('Autor Borrado Exitosamente');
+       		 </script>
         <?php
 
     	}
      else 
      {
      	        ?>
-        <script>
+       	 <script>
             window.location.href = "../EliminarAutor.php";
             alert('Error al Borrar');
-        </script>
+      	  </script>
         <?php
      }
 
